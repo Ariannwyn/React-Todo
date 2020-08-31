@@ -31,6 +31,7 @@ class TodoForm extends React.Component {
           name="task"
           value={this.state.task}
           onChange={this.onChange}
+          placeholder="What's on your list?"
         />
         <br />
         <button type="submit">Add</button>

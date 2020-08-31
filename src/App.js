@@ -68,7 +68,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <img src={image} className="image" />
+        <img src={image} className="image" alt="" />
         <h2>Welcome to your fall bucket list!</h2>
         <TodoForm addTask={this.addTask} clearTask={this.clearTask} />
         <TodoList todos={this.state.todos} completeTask={this.completeTask} />
