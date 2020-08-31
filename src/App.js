@@ -2,11 +2,12 @@ import React from "react";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
 import "./components/Todo.css";
+import image from "./images/undraw.png";
 
 const todos = [
   {
     id: 1,
-    task: "new task",
+    task: "Jump into a leaf pile",
     completed: false,
   },
 ];
@@ -67,7 +68,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
+        <img src={image} className="image" />
+        <h2>Welcome to your fall bucket list!</h2>
         <TodoForm addTask={this.addTask} clearTask={this.clearTask} />
         <TodoList todos={this.state.todos} completeTask={this.completeTask} />
       </div>
