@@ -1,6 +1,7 @@
 import React from "react";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+import "./components/Todo.css";
 
 const todos = [
   {
@@ -32,6 +33,8 @@ class App extends React.Component {
             ...item,
             completed: !item.completed,
           };
+        } else {
+          return { ...item, item };
         }
       }),
     });
@@ -50,8 +53,14 @@ class App extends React.Component {
 
   clearTask = (e) => {
     e.preventDefault();
-    this.setState({
-      todos: [],
+    return this.setState({
+      todos: this.state.todos.filter((item) => {
+        if (item.completed === true) {
+          return (item = undefined);
+        } else {
+          return item;
+        }
+      }),
     });
   };
 
